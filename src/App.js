@@ -1,4 +1,4 @@
-
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Button, AppBar, CssBaseline, Toolbar, Typography, Box, Grid} from '@material-ui/core';
 import './App.css';
 import Paper from '@material-ui/core/Paper';
@@ -11,7 +11,28 @@ import InfoIcon from '@material-ui/icons/Info';
 import { FaYoutubeSquare } from 'react-icons/fa';
 import {FaFacebookSquare} from 'react-icons/fa'
 import {FaInstagramSquare}  from 'react-icons/fa';
+import SwipeableTemporaryDrawer from './components/drawer'
+import MenuIcon from '@material-ui/icons/Menu';
 
+
+
+function AppBarMediaQuery() {
+  const matches = useMediaQuery('(max-width:600px)');
+  return <>{matches ? <SwipeableTemporaryDrawer menuicon = {<MenuIcon fontSize="large" style={{marginRight: "15px",color:"white",marginBottom:"9px"}}/>}/> : 
+        <><Typography variant="h6"  style = {styles.contents}><HomeIcon fontSize="medium"/></Typography>
+        <Typography variant="h6"  style = {styles.contents}><PhotoLibraryIcon /></Typography>
+        <Typography variant="h6"  style = {{marginRight:"35px"}}><InfoIcon /></Typography>
+        <Typography variant="h6" gutterBottom style = {{marginRight:"30px"}} ><Button variant="contained" color="primary">
+  Sign In
+</Button></Typography></>
+}</>
+}
+
+function ArpeggioMediaQuery() {
+  const matches = useMediaQuery('(max-width:600px)');
+  return <>{matches ? <Typography  style={{color:"white",fontSize:"9vh",textShadow:"7px 7px 8px #000"}} >ARPEGGIO</Typography> : <Typography  style={{color:"white",fontSize:"10vh",textShadow:"7px 7px 8px #000"}} >ARPEGGIO</Typography>
+}</>
+}
 
 
 const styles = {
@@ -33,9 +54,7 @@ const styles = {
     width:"150px",
     height:"150px",
     backgroundSize:'cover'
-    
-    
-},
+  },
 };
 
 function App() {
@@ -55,12 +74,7 @@ function App() {
 
         <Box>
         <Toolbar>
-        <Typography variant="h6"  style = {styles.contents}><HomeIcon fontSize="medium"/></Typography>
-        <Typography variant="h6"  style = {styles.contents}><PhotoLibraryIcon /></Typography>
-        <Typography variant="h6"  style = {{marginRight:"35px"}}><InfoIcon /></Typography>
-        <Typography variant="h6" gutterBottom style = {{marginRight:"30px"}} ><Button variant="contained" color="primary">
-  Sign In
-</Button></Typography>
+        {AppBarMediaQuery()}
         </Toolbar>
         </Box>
         
@@ -73,7 +87,7 @@ function App() {
       <Paper variant="elevation" elevation={3} style={styles.paper_Container}>
         
       </Paper>
-      <Typography  style={{color:"white",fontSize:"10vh",textShadow:"7px 7px 8px #000"}} >ARPEGGIO</Typography>
+      {ArpeggioMediaQuery()}
       <Typography variant="h5" style={{color:"white",textShadow:"14px 20px 8px #000"}} >THE MUSICAL SOCIETY</Typography>
       <span>
       <FaYoutubeSquare color='white' size='3rem' style={{margin:"20px"}}/>
