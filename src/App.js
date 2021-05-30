@@ -55,6 +55,27 @@ const styles = {
     height:"150px",
     backgroundSize:'cover'
   },
+  youtubeSquare:{
+    color:"white",
+    margin:'20px',
+    "&:hover": {
+      color:"red"
+    }
+  },
+  fbSquare:{
+    color:"white",
+    margin:'20px',
+    '&:hover': {
+      color:"blue"   
+     }
+  },
+  instaSquare:{
+    color:"white",
+    margin:'20px',
+    '&:hover': {
+      color:'pink'
+    }
+  }
 };
 
 function App() {
@@ -90,9 +111,9 @@ function App() {
       {ArpeggioMediaQuery()}
       <Typography variant="h5" style={{color:"white",textShadow:"14px 20px 8px #000"}} >THE MUSICAL SOCIETY</Typography>
       <span>
-      <FaYoutubeSquare color='white' size='3rem' style={{margin:"20px"}}/>
-      <FaFacebookSquare color='white' size='3rem' style={{margin:"20px"}} />
-      <FaInstagramSquare color='white' size='3rem' style={{margin:"20px"}} />
+      <a href={'https://youtube.com/channel/UCRLiax7dP8-sT9lznazs7sA'}><FaYoutubeSquare  size='3rem' style={styles.youtubeSquare} /></a>
+      <a href={'https://www.facebook.com/groups/304011156450932/?ref=share&exp=e8c2'}><FaFacebookSquare  size='3rem' style={styles.fbSquare} /></a>
+      <a href={'https://instagram.com/arpeggioofficial.cetb?utm_medium=copy_link'}><FaInstagramSquare  size='3rem' style={styles.instaSquare} /></a>
       </span>
       
       </Grid>

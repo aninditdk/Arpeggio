@@ -93,7 +93,7 @@ export default function SwipeableTemporaryDrawer(props) {
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
             onOpen={toggleDrawer(anchor, true)}
-            classes={{paper:classes.drawerPaper}}
+            
           >
             {list(anchor)}
           </SwipeableDrawer>
