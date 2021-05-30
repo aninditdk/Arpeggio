@@ -19,7 +19,9 @@ const styles = {
       backgroundImage: `linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.5)),url(${main_page})`,
       height: '100vh',
       
-      backgroundSize:'100% 100%'
+      backgroundSize:'100% 100%',
+      overflowY: "hidden", /* Hide vertical scrollbar */
+      overflowX: "hidden" /* Hide horizontal scrollbar */
   },
   contents: {
     marginRight: "15px"
