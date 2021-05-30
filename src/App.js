@@ -21,7 +21,8 @@ const styles = {
       
       backgroundSize:'100% 100%',
       overflowY: "hidden", /* Hide vertical scrollbar */
-      overflowX: "hidden" /* Hide horizontal scrollbar */
+      overflowX: "hidden", /* Hide horizontal scrollbar */
+      borderRadius: "0px 0px"
   },
   contents: {
     marginRight: "15px"
