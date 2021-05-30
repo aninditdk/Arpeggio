@@ -18,7 +18,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 function AppBarMediaQuery() {
   const matches = useMediaQuery('(max-width:600px)');
-  return <>{matches ? <SwipeableTemporaryDrawer menuicon = {<MenuIcon fontSize="large" style={{marginRight: "15px",color:"white",marginBottom:"9px"}}/>}/> : 
+  return <>{matches ? <SwipeableTemporaryDrawer menuicon = {<MenuIcon fontSize="large" style={{marginRight: "5px",color:"white",marginBottom:"9px"}}/>}/> : 
         <><Typography variant="h6"  style = {styles.contents}><HomeIcon fontSize="medium"/></Typography>
         <Typography variant="h6"  style = {styles.contents}><PhotoLibraryIcon /></Typography>
         <Typography variant="h6"  style = {{marginRight:"35px"}}><InfoIcon /></Typography>
