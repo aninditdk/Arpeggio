@@ -1,7 +1,6 @@
 
 import { Button, AppBar, CssBaseline, Toolbar, Typography, Box, Grid} from '@material-ui/core';
 import './App.css';
-import Image from 'material-ui-image';
 import Paper from '@material-ui/core/Paper';
 import main_page from './Images/main_page.jpg';
 import logo_111 from './Images/logo_111.PNG';
@@ -9,7 +8,6 @@ import MusicVideoIcon from '@material-ui/icons/MusicVideo';
 import HomeIcon from '@material-ui/icons/Home';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InfoIcon from '@material-ui/icons/Info';
-import MusicVideoTwoToneIcon from '@material-ui/icons/MusicVideoTwoTone';
 import { FaYoutubeSquare } from 'react-icons/fa';
 import {FaFacebookSquare} from 'react-icons/fa'
 import {FaInstagramSquare}  from 'react-icons/fa';
@@ -57,7 +55,7 @@ function App() {
         <Typography variant="h6"  style = {styles.contents}><HomeIcon fontSize="medium"/></Typography>
         <Typography variant="h6"  style = {styles.contents}><PhotoLibraryIcon /></Typography>
         <Typography variant="h6"  style = {{marginRight:"35px"}}><InfoIcon /></Typography>
-        <Typography variant="h6" gutterBottom style = {{marginRight:"30px"}} style={{color:"white"}}><Button variant="contained" color="primary">
+        <Typography variant="h6" gutterBottom style = {{marginRight:"30px"}} ><Button variant="contained" color="primary">
   Sign In
 </Button></Typography>
         </Toolbar>
