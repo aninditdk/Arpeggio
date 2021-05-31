@@ -11,7 +11,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InfoIcon from '@material-ui/icons/Info';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-
+// import piano from '../Images/piano.jpg';
 
 const useStyles = makeStyles({
   list: {
@@ -20,7 +20,16 @@ const useStyles = makeStyles({
   fullList: {
     width: 'auto',
   },
-  
+  paper: {
+    backgroundColor:'#393e46',
+    opacity:"0.8",
+    width:"55%",
+    
+  },
+  listItemText: {
+    fontSize:"1.5rem",
+    textShadow:"2px 2px 4px #000"
+  }
 });
 
 
@@ -41,19 +50,19 @@ export default function SwipeableTemporaryDrawer(props) {
   const itemlist = [
       {
         text: "Home",
-        icon: <HomeIcon/>
+        icon: <HomeIcon style={{color:"white",fontSize:"2rem", margin:"10px"}}/>
       },
       {
         text: "Photo Gallery",
-        icon: <PhotoLibraryIcon/>
+        icon: <PhotoLibraryIcon style={{color:"white",fontSize:"2rem",margin:"10px"}}/>
       },
       {
         text: "About Us",
-        icon: <InfoIcon/>
+        icon: <InfoIcon style={{color:"white",fontSize:"2rem",margin:"10px"}}/>
       },
       {
         text: "Sign In",
-        icon: <ExitToAppIcon/>
+        icon: <ExitToAppIcon style={{color:"white",fontSize:"2rem",margin:"10px"}}/>
       },
 
   ]
@@ -72,9 +81,9 @@ export default function SwipeableTemporaryDrawer(props) {
         {itemlist.map((item, index) => {
             const {text, icon} = item;
             return (
-          <ListItem button key={text} >
+          <ListItem button style={{color:"white"}} key={text} >
             {icon && <ListItemIcon>{icon}</ListItemIcon>}
-            <ListItemText primary={text} />
+            <ListItemText classes={{primary:classes.listItemText}} primary={text} />
           </ListItem>
         )
             
@@ -93,7 +102,7 @@ export default function SwipeableTemporaryDrawer(props) {
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
             onOpen={toggleDrawer(anchor, true)}
-            
+            classes={{paper:classes.paper}}
           >
             {list(anchor)}
           </SwipeableDrawer>
