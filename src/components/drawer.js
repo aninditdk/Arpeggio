@@ -23,7 +23,7 @@ const useStyles = makeStyles({
   paper: {
     backgroundColor:'#393e46',
     opacity:"0.8",
-    width:"65%",
+    width:"68%",
     
   },
   listItemText: {
