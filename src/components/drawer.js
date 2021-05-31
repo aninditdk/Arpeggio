@@ -11,7 +11,8 @@ import HomeIcon from '@material-ui/icons/Home';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InfoIcon from '@material-ui/icons/Info';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-// import piano from '../Images/piano.jpg';
+
+
 
 const useStyles = makeStyles({
   list: {
@@ -21,8 +22,8 @@ const useStyles = makeStyles({
     width: 'auto',
   },
   paper: {
-    backgroundColor:'#393e46',
-    opacity:"0.8",
+    backgroundColor:'#000',
+    
     width:"68%",
     
   },
@@ -84,6 +85,7 @@ export default function SwipeableTemporaryDrawer(props) {
           <ListItem button style={{color:"white"}} key={text} >
             {icon && <ListItemIcon>{icon}</ListItemIcon>}
             <ListItemText classes={{primary:classes.listItemText}} primary={text} />
+            
           </ListItem>
         )
             
