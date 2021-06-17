@@ -8,32 +8,13 @@ import MusicVideoIcon from '@material-ui/icons/MusicVideo';
 import HomeIcon from '@material-ui/icons/Home';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InfoIcon from '@material-ui/icons/Info';
-import { FaYoutubeSquare } from 'react-icons/fa';
-import {FaFacebookSquare} from 'react-icons/fa'
-import {FaInstagramSquare}  from 'react-icons/fa';
 import SwipeableTemporaryDrawer from './components/drawer'
 import MenuIcon from '@material-ui/icons/Menu';
+import Swipe from './components/gallery';
+import {Link, Route} from "wouter";
+import MainPage from './components/MainPage';
 
-
-
-function AppBarMediaQuery() {
-  const matches = useMediaQuery('(max-width:600px)');
-  return <>{matches ? <SwipeableTemporaryDrawer menuicon = {<MenuIcon fontSize="large" style={{color:"white",marginBottom:"9px",marginLeft:"35px"}}/>}/> : 
-        <><Typography variant="h6"  style = {styles.contents}><HomeIcon fontSize="medium"/></Typography>
-        <Typography variant="h6"  style = {styles.contents}><PhotoLibraryIcon /></Typography>
-        <Typography variant="h6"  style = {{marginRight:"35px"}}><InfoIcon /></Typography>
-        <Typography variant="h6" gutterBottom style = {{marginRight:"30px"}} ><Button variant="contained" color="primary">
-  Sign In
-</Button></Typography></>
-}</>
-}
-
-function ArpeggioMediaQuery() {
-  const matches = useMediaQuery('(max-width:600px)');
-  return <>{matches ? <Typography  style={{color:"white",fontSize:"9vh",textShadow:"7px 7px 8px #000"}} >ARPEGGIO</Typography> : <Typography  style={{color:"white",fontSize:"10vh",textShadow:"7px 7px 8px #000"}} >ARPEGGIO</Typography>
-}</>
-}
-
+document.body.style= 'background:black;overflow:hidden';
 
 const styles = {
   paperContainer: {
@@ -78,13 +59,30 @@ const styles = {
   }
 };
 
+function AppBarMediaQuery() {
+  const matches = useMediaQuery('(max-width:600px)');
+  return <>{matches ? <SwipeableTemporaryDrawer menuicon = {<MenuIcon fontSize="large" style={{color:"white",marginBottom:"9px",marginLeft:"35px"}}/>}/> : 
+        <><Link href="/"><a className="link"><Typography variant="h6"  style = {styles.contents}><HomeIcon style={{color:"white"}} fontSize="medium"/></Typography></a></Link>
+        <Link href="/photos"><a className="link"><Typography variant="h6"  style = {styles.contents}><PhotoLibraryIcon style={{color:"white"}}/></Typography>  </a></Link>   
+        <Typography variant="h6"  style = {{marginRight:"35px"}}><InfoIcon style={{color:"white"}} /></Typography>
+        <Typography variant="h6" gutterBottom style = {{marginRight:"30px"}} ><Button variant="contained" color="primary">
+  Sign In
+</Button></Typography></>
+}</>
+}
+
+
+
 function App() {
   return (
     <>
+    
+
+      
       <CssBaseline />
     
-      <Paper style={styles.paperContainer}>
-      <AppBar position="relative" style={{backgroundColor: "black",minHeight:"78px", justifyContent:"space-between",alignItems:"center", opacity:"0.8",boxShadow:"1px 1px 4px #000",flexDirection:"row"}}>
+      {/* <Paper style={styles.paperContainer}> */}
+      <AppBar position="relative" style={{backgroundColor: "black",minHeight:"78px", justifyContent:"space-between",alignItems:"center",boxShadow:"1px 1px 4px #000",flexDirection:"row"}}>
       
         <Box>
         <Toolbar>
@@ -98,27 +96,20 @@ function App() {
         {AppBarMediaQuery()}
         </Toolbar>
         </Box>
-        
-        
-        
-      </AppBar>
+        </AppBar>
 
-      <Grid container direction="column" alignItems="center" justify="center" style={{minHeight:"600px", maxWidth:"100vw"}}>
-      
-      <Paper variant="elevation" elevation={3} style={styles.paper_Container}>
+
         
-      </Paper>
-      {ArpeggioMediaQuery()}
-      <Typography variant="h5" style={{color:"white",textShadow:"14px 20px 8px #000"}} >THE MUSICAL SOCIETY</Typography>
-      <span>
-      <a href={'https://youtube.com/channel/UCRLiax7dP8-sT9lznazs7sA'}><FaYoutubeSquare  size='3rem' style={styles.youtubeSquare} /></a>
-      <a href={'https://www.facebook.com/groups/304011156450932/?ref=share&exp=e8c2'}><FaFacebookSquare  size='3rem' style={styles.fbSquare} /></a>
-      <a href={'https://instagram.com/arpeggioofficial.cetb?utm_medium=copy_link'}><FaInstagramSquare  size='3rem' style={styles.instaSquare} /></a>
-      </span>
+            
+            <Route path="/" >{<MainPage></MainPage> }</Route>
+            <Route path="/photos">{<Swipe></Swipe>}</Route>
+          
+
       
-      </Grid>
-      </Paper>
+
+      
     < />
+    
   );
 }
 

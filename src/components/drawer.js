@@ -11,6 +11,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InfoIcon from '@material-ui/icons/Info';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import {Link} from "wouter";
 
 
 
@@ -24,13 +25,14 @@ const useStyles = makeStyles({
   paper: {
     backgroundColor:'#000',
     
-    width:"68%",
+    width:"52%",
     
   },
   listItemText: {
     fontSize:"1.5rem",
-    textShadow:"2px 2px 4px #000"
-  }
+    
+  },
+ 
 });
 
 
@@ -51,19 +53,23 @@ export default function SwipeableTemporaryDrawer(props) {
   const itemlist = [
       {
         text: "Home",
-        icon: <HomeIcon style={{color:"white",fontSize:"2rem", margin:"10px"}}/>
+        icon: <HomeIcon style={{color:"white",fontSize:"2rem", margin:"10px"}}/>,
+        link: "/"
       },
       {
         text: "Photo Gallery",
-        icon: <PhotoLibraryIcon style={{color:"white",fontSize:"2rem",margin:"10px"}}/>
+        icon: <PhotoLibraryIcon style={{color:"white",fontSize:"2rem",margin:"10px"}}/>,
+        link: "/photos"
       },
       {
         text: "About Us",
-        icon: <InfoIcon style={{color:"white",fontSize:"2rem",margin:"10px"}}/>
+        icon: <InfoIcon style={{color:"white",fontSize:"2rem",margin:"10px"}}/>,
+        link: "/"
       },
       {
         text: "Sign In",
-        icon: <ExitToAppIcon style={{color:"white",fontSize:"2rem",margin:"10px"}}/>
+        icon: <ExitToAppIcon style={{color:"white",fontSize:"2rem",margin:"10px"}}/>,
+        link: "/"
       },
 
   ]
@@ -80,13 +86,17 @@ export default function SwipeableTemporaryDrawer(props) {
     >
       <List >
         {itemlist.map((item, index) => {
-            const {text, icon} = item;
+            const {text, icon, link} = item;
             return (
+          
           <ListItem button style={{color:"white"}} key={text} >
-            {icon && <ListItemIcon>{icon}</ListItemIcon>}
-            <ListItemText classes={{primary:classes.listItemText}} primary={text} />
+            <Link  href={link}><a style={{textDecoration:"none"}} className="link">
             
+            <ListItemText style={{color:"white",display:"inline-block",margin:"15px"}} classes={{primary:classes.listItemText}} primary={text} />
+            </a></Link>  
           </ListItem>
+          
+          
         )
             
         })}
