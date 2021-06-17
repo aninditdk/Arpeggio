@@ -1,7 +1,7 @@
 import React from 'react'
 import Paper from '@material-ui/core/Paper';
 import main_page from '../Images/main_page.jpg';
-import { Toolbar, Typography,Grid} from '@material-ui/core';
+import {Typography,Grid} from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { FaYoutubeSquare } from 'react-icons/fa';
 import {FaFacebookSquare} from 'react-icons/fa'

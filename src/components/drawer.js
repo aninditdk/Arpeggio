@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   paper: {
     backgroundColor:'#000',
     
-    width:"52%",
+    width:"60%",
     
   },
   listItemText: {
@@ -53,22 +53,22 @@ export default function SwipeableTemporaryDrawer(props) {
   const itemlist = [
       {
         text: "Home",
-        icon: <HomeIcon style={{color:"white",fontSize:"2rem", margin:"10px"}}/>,
+        icon: <HomeIcon  style={{color:"white",fontSize:"30",paddingTop:"10px"}}/>,
         link: "/"
       },
       {
         text: "Photo Gallery",
-        icon: <PhotoLibraryIcon style={{color:"white",fontSize:"2rem",margin:"10px"}}/>,
+        icon: <PhotoLibraryIcon style={{color:"white",fontSize:"30",paddingTop:"10px"}}/>,
         link: "/photos"
       },
       {
         text: "About Us",
-        icon: <InfoIcon style={{color:"white",fontSize:"2rem",margin:"10px"}}/>,
+        icon: <InfoIcon style={{color:"white",fontSize:"30",paddingTop:"10px"}}/>,
         link: "/"
       },
       {
         text: "Sign In",
-        icon: <ExitToAppIcon style={{color:"white",fontSize:"2rem",margin:"10px"}}/>,
+        icon: <ExitToAppIcon style={{color:"white",fontSize:"30",paddingTop:"10px"}}/>,
         link: "/"
       },
 
@@ -84,15 +84,15 @@ export default function SwipeableTemporaryDrawer(props) {
       onKeyDown={toggleDrawer(anchor, false)}
       
     >
-      <List >
+      <List>
         {itemlist.map((item, index) => {
             const {text, icon, link} = item;
             return (
           
-          <ListItem button style={{color:"white"}} key={text} >
-            <Link  href={link}><a style={{textDecoration:"none"}} className="link">
-            
-            <ListItemText style={{color:"white",display:"inline-block",margin:"15px"}} classes={{primary:classes.listItemText}} primary={text} />
+          <ListItem button style={{color:"white",marginTop:"25px"}} key={text} >
+            <Link  href={link}><a href={link} style={{textDecoration:"none"}} className="link">
+            <ListItemIcon style={{color:"white",display:"inline-block"}}>{icon}</ListItemIcon>
+            <ListItemText style={{color:"white",display:"inline-block"}} classes={{primary:classes.listItemText}} primary={text} />
             </a></Link>  
           </ListItem>
           

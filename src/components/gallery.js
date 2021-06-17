@@ -34,7 +34,7 @@ export default function Swipe() {
   "slideShadows": true
 }} navigation={true} className="mySwiper">
   {photos.map(x => {
-    return <SwiperSlide><img src={x.src} /></SwiperSlide>
+    return <SwiperSlide><img src={x.src} alt="" /></SwiperSlide>
   })}
   
   </Swiper>
@@ -42,7 +42,7 @@ export default function Swipe() {
   <Swiper onSwiper={setThumbsSwiper} spaceBetween={10} slidesPerView={5} freeMode={true} watchSlidesVisibility={true} watchSlidesProgress={true} className="mySwiper2" style={{maxWidth:"80%",display:"flex"}}>
   
   {photos.map(x => {
-    return <SwiperSlide><img src={x.src} /></SwiperSlide>
+    return <SwiperSlide><img src={x.src} alt="" /></SwiperSlide>
   })}
   </Swiper>
     </React.Fragment>

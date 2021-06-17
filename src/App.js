@@ -1,7 +1,6 @@
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { Button, AppBar, CssBaseline, Toolbar, Typography, Box, Grid} from '@material-ui/core';
+import { Button, AppBar, CssBaseline, Toolbar, Typography, Box} from '@material-ui/core';
 import './App.css';
-import Paper from '@material-ui/core/Paper';
 import main_page from './Images/main_page.jpg';
 import logo_111 from './Images/logo_111.PNG';
 import MusicVideoIcon from '@material-ui/icons/MusicVideo';
@@ -62,8 +61,8 @@ const styles = {
 function AppBarMediaQuery() {
   const matches = useMediaQuery('(max-width:600px)');
   return <>{matches ? <SwipeableTemporaryDrawer menuicon = {<MenuIcon fontSize="large" style={{color:"white",marginBottom:"9px",marginLeft:"35px"}}/>}/> : 
-        <><Link href="/"><a className="link"><Typography variant="h6"  style = {styles.contents}><HomeIcon style={{color:"white"}} fontSize="medium"/></Typography></a></Link>
-        <Link href="/photos"><a className="link"><Typography variant="h6"  style = {styles.contents}><PhotoLibraryIcon style={{color:"white"}}/></Typography>  </a></Link>   
+        <><Link href="/"><a href= "/" className="link"><Typography variant="h6"  style = {styles.contents}><HomeIcon style={{color:"white"}} fontSize="medium"/></Typography></a></Link>
+        <Link href="/photos"><a href= "/photos" className="link"><Typography variant="h6"  style = {styles.contents}><PhotoLibraryIcon style={{color:"white"}}/></Typography>  </a></Link>   
         <Typography variant="h6"  style = {{marginRight:"35px"}}><InfoIcon style={{color:"white"}} /></Typography>
         <Typography variant="h6" gutterBottom style = {{marginRight:"30px"}} ><Button variant="contained" color="primary">
   Sign In
