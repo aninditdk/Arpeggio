@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   paper: {
     backgroundColor:'#000',
     
-    width:"60%",
+    width:"70%",
     
   },
   listItemText: {
